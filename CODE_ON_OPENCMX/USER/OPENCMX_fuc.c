@@ -145,7 +145,7 @@ void tasks(void)
 
 			u = ADCConvertedValue;
 			u_kalman = updateEstimate(u);
-			printf("%2.1f,%2.1f\r\n",u,u_kalman);
+			//printf("%2.1f,%2.1f\r\n",u,u_kalman);
 		}
 		//UART1 RX process
 		if(u1out == ONTIME)
