@@ -47,6 +47,7 @@ Section Cross References
     opencmx_main.o(i.main) refers to opencmx_fuc.o(i.hardware_init) for hardware_init
     opencmx_main.o(i.main) refers to stm32f10x_wwdg.o(i.WWDG_SetCounter) for WWDG_SetCounter
     opencmx_main.o(i.main) refers to opencmx_fuc.o(i.tasks) for tasks
+    opencmx_main.o(i.main) refers to modbus_slave.o(i.modbus_slave_exe) for modbus_slave_exe
     lcd16x2.o(i.LCD_Clear) refers to lcd16x2.o(i.LCD_SendCommand) for LCD_SendCommand
     lcd16x2.o(i.LCD_Clear) refers to delay.o(i.delay_ms) for delay_ms
     lcd16x2.o(i.LCD_Enable) refers to delay.o(i.delay_us) for delay_us
@@ -716,25 +717,9 @@ Removing Unused input sections from the image.
     Removing modbus_slave.o(.rrx_text), (6 bytes).
     Removing modbus_slave.o(i.RCV_ON), (20 bytes).
     Removing modbus_slave.o(i.get_ticks), (12 bytes).
-    Removing modbus_slave.o(i.modbus_check_timeout), (24 bytes).
-    Removing modbus_slave.o(i.modbus_exception_rsp), (64 bytes).
     Removing modbus_slave.o(i.modbus_init), (2 bytes).
-    Removing modbus_slave.o(i.modbus_kbhit), (48 bytes).
-    Removing modbus_slave.o(i.modbus_read_discrete_input_rsp), (46 bytes).
     Removing modbus_slave.o(i.modbus_read_exception_status_rsp), (16 bytes).
-    Removing modbus_slave.o(i.modbus_read_holding_registers_rsp), (54 bytes).
-    Removing modbus_slave.o(i.modbus_read_input_registers_rsp), (54 bytes).
-    Removing modbus_slave.o(i.modbus_serial_putc), (48 bytes).
-    Removing modbus_slave.o(i.modbus_serial_send_start), (48 bytes).
-    Removing modbus_slave.o(i.modbus_serial_send_stop), (36 bytes).
-    Removing modbus_slave.o(i.modbus_slave_exe), (628 bytes).
-    Removing modbus_slave.o(i.modbus_timeout_now), (68 bytes).
-    Removing modbus_slave.o(i.modbus_write_multiple_coils_rsp), (44 bytes).
-    Removing modbus_slave.o(i.modbus_write_multiple_registers_rsp), (44 bytes).
-    Removing modbus_slave.o(i.modbus_write_single_coil_rsp), (44 bytes).
-    Removing modbus_slave.o(i.modbus_write_single_register_rsp), (44 bytes).
     Removing modbus_slave.o(i.set_ticks), (12 bytes).
-    Removing modbus_slave.o(i.swap_bits), (60 bytes).
     Removing modbus_slave.o(i.updateModbusData), (100 bytes).
     Removing modbus_slave.o(.constdata), (1 bytes).
     Removing modbus_slave.o(.constdata), (1 bytes).
@@ -1256,7 +1241,7 @@ Removing Unused input sections from the image.
     Removing system_stm32f10x.o(.revsh_text), (4 bytes).
     Removing system_stm32f10x.o(.rrx_text), (6 bytes).
 
-612 unused section(s) (total 18822 bytes) removed from the image.
+596 unused section(s) (total 17468 bytes) removed from the image.
 
 ==============================================================================
 
@@ -1268,33 +1253,33 @@ Image Symbol Table
 
     ../clib/microlib/division.c              0x00000000   Number         0  uidiv.o ABSOLUTE
     ../clib/microlib/division.c              0x00000000   Number         0  uldiv.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
-    ../clib/microlib/longlong.c              0x00000000   Number         0  llushr.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
     ../clib/microlib/longlong.c              0x00000000   Number         0  llsshr.o ABSOLUTE
+    ../clib/microlib/longlong.c              0x00000000   Number         0  llushr.o ABSOLUTE
     ../clib/microlib/longlong.c              0x00000000   Number         0  llshl.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf5.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf3.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf4.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printfb.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf6.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf0.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf7.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf8.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printfa.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf2.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printfb.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf0.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf1.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf2.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf4.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf5.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf6.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf3.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printfa.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf8.o ABSOLUTE
     ../clib/microlib/printf/stubs.s          0x00000000   Number         0  stubs.o ABSOLUTE
     ../clib/microlib/stdio/streams.c         0x00000000   Number         0  stdout.o ABSOLUTE
     ../clib/microlib/string/memset.c         0x00000000   Number         0  memseta.o ABSOLUTE
@@ -1305,12 +1290,12 @@ Image Symbol Table
     ../fplib/microlib/fpadd.c                0x00000000   Number         0  dadd.o ABSOLUTE
     ../fplib/microlib/fpdiv.c                0x00000000   Number         0  fdiv.o ABSOLUTE
     ../fplib/microlib/fpdiv.c                0x00000000   Number         0  ddiv.o ABSOLUTE
-    ../fplib/microlib/fpepilogue.c           0x00000000   Number         0  depilogue.o ABSOLUTE
     ../fplib/microlib/fpepilogue.c           0x00000000   Number         0  fepilogue.o ABSOLUTE
+    ../fplib/microlib/fpepilogue.c           0x00000000   Number         0  depilogue.o ABSOLUTE
     ../fplib/microlib/fpfix.c                0x00000000   Number         0  dfixul.o ABSOLUTE
     ../fplib/microlib/fpflt.c                0x00000000   Number         0  ffltui.o ABSOLUTE
-    ../fplib/microlib/fpmul.c                0x00000000   Number         0  fmul.o ABSOLUTE
     ../fplib/microlib/fpmul.c                0x00000000   Number         0  dmul.o ABSOLUTE
+    ../fplib/microlib/fpmul.c                0x00000000   Number         0  fmul.o ABSOLUTE
     ..\USER\OPENCMX_fuc.c                    0x00000000   Number         0  opencmx_fuc.o ABSOLUTE
     ..\USER\OPENCMX_main.c                   0x00000000   Number         0  opencmx_main.o ABSOLUTE
     ..\USER\adcdma\adcdma.c                  0x00000000   Number         0  adcdma.o ABSOLUTE
@@ -1413,8 +1398,8 @@ Image Symbol Table
     .text                                    0x080005be   Section        0  uldiv.o(.text)
     .text                                    0x08000620   Section        0  llshl.o(.text)
     .text                                    0x0800063e   Section        0  llsshr.o(.text)
-    .text                                    0x08000662   Section        0  iusefp.o(.text)
     .text                                    0x08000662   Section        0  fepilogue.o(.text)
+    .text                                    0x08000662   Section        0  iusefp.o(.text)
     .text                                    0x080006d0   Section        0  depilogue.o(.text)
     .text                                    0x0800078a   Section        0  ddiv.o(.text)
     .text                                    0x08000868   Section        0  dfixul.o(.text)
@@ -1502,13 +1487,29 @@ Image Symbol Table
     i.hardware_init                          0x0800205c   Section        0  opencmx_fuc.o(i.hardware_init)
     i.incomming_modbus_serial                0x08002120   Section        0  modbus_slave.o(i.incomming_modbus_serial)
     i.main                                   0x08002190   Section        0  opencmx_main.o(i.main)
-    i.modbus_calc_crc                        0x080021a0   Section        0  modbus_slave.o(i.modbus_calc_crc)
-    i.modbus_enable_timeout                  0x080021c4   Section        0  modbus_slave.o(i.modbus_enable_timeout)
-    i.tasks                                  0x080021d4   Section        0  opencmx_fuc.o(i.tasks)
-    i.updateEstimate                         0x080022d8   Section        0  simplekalmanfilter.o(i.updateEstimate)
-    .constdata                               0x08002374   Section        1  stm32f10x_it.o(.constdata)
-    .constdata                               0x08002375   Section        1  stm32f10x_it.o(.constdata)
-    .constdata                               0x08002376   Section      512  modbus_slave.o(.constdata)
+    i.modbus_calc_crc                        0x080021a4   Section        0  modbus_slave.o(i.modbus_calc_crc)
+    i.modbus_check_timeout                   0x080021c8   Section        0  modbus_slave.o(i.modbus_check_timeout)
+    i.modbus_enable_timeout                  0x080021e0   Section        0  modbus_slave.o(i.modbus_enable_timeout)
+    i.modbus_exception_rsp                   0x080021f0   Section        0  modbus_slave.o(i.modbus_exception_rsp)
+    i.modbus_kbhit                           0x08002230   Section        0  modbus_slave.o(i.modbus_kbhit)
+    i.modbus_read_discrete_input_rsp         0x08002260   Section        0  modbus_slave.o(i.modbus_read_discrete_input_rsp)
+    i.modbus_read_holding_registers_rsp      0x0800228e   Section        0  modbus_slave.o(i.modbus_read_holding_registers_rsp)
+    i.modbus_read_input_registers_rsp        0x080022c4   Section        0  modbus_slave.o(i.modbus_read_input_registers_rsp)
+    i.modbus_serial_putc                     0x080022fc   Section        0  modbus_slave.o(i.modbus_serial_putc)
+    i.modbus_serial_send_start               0x0800232c   Section        0  modbus_slave.o(i.modbus_serial_send_start)
+    i.modbus_serial_send_stop                0x0800235c   Section        0  modbus_slave.o(i.modbus_serial_send_stop)
+    i.modbus_slave_exe                       0x08002380   Section        0  modbus_slave.o(i.modbus_slave_exe)
+    i.modbus_timeout_now                     0x080025f4   Section        0  modbus_slave.o(i.modbus_timeout_now)
+    i.modbus_write_multiple_coils_rsp        0x08002638   Section        0  modbus_slave.o(i.modbus_write_multiple_coils_rsp)
+    i.modbus_write_multiple_registers_rsp    0x08002664   Section        0  modbus_slave.o(i.modbus_write_multiple_registers_rsp)
+    i.modbus_write_single_coil_rsp           0x08002690   Section        0  modbus_slave.o(i.modbus_write_single_coil_rsp)
+    i.modbus_write_single_register_rsp       0x080026bc   Section        0  modbus_slave.o(i.modbus_write_single_register_rsp)
+    i.swap_bits                              0x080026e8   Section        0  modbus_slave.o(i.swap_bits)
+    i.tasks                                  0x08002724   Section        0  opencmx_fuc.o(i.tasks)
+    i.updateEstimate                         0x08002828   Section        0  simplekalmanfilter.o(i.updateEstimate)
+    .constdata                               0x080028c4   Section        1  stm32f10x_it.o(.constdata)
+    .constdata                               0x080028c5   Section        1  stm32f10x_it.o(.constdata)
+    .constdata                               0x080028c6   Section      512  modbus_slave.o(.constdata)
     .data                                    0x20000000   Section       28  stm32f10x_it.o(.data)
     .data                                    0x2000001c   Section        4  simplekalmanfilter.o(.data)
     .data                                    0x20000020   Section        4  simplekalmanfilter.o(.data)
@@ -1753,17 +1754,33 @@ Image Symbol Table
     fputc                                    0x08002039   Thumb Code    30  opencmx_main.o(i.fputc)
     hardware_init                            0x0800205d   Thumb Code   148  opencmx_fuc.o(i.hardware_init)
     incomming_modbus_serial                  0x08002121   Thumb Code   102  modbus_slave.o(i.incomming_modbus_serial)
-    main                                     0x08002191   Thumb Code    16  opencmx_main.o(i.main)
-    modbus_calc_crc                          0x080021a1   Thumb Code    24  modbus_slave.o(i.modbus_calc_crc)
-    modbus_enable_timeout                    0x080021c5   Thumb Code    10  modbus_slave.o(i.modbus_enable_timeout)
-    tasks                                    0x080021d5   Thumb Code   168  opencmx_fuc.o(i.tasks)
-    updateEstimate                           0x080022d9   Thumb Code   148  simplekalmanfilter.o(i.updateEstimate)
-    RX_BUFFER_SIZE0                          0x08002374   Data           1  stm32f10x_it.o(.constdata)
-    RX2_BUFFER_SIZE                          0x08002375   Data           1  stm32f10x_it.o(.constdata)
-    modbus_auchCRCHi                         0x08002376   Data         256  modbus_slave.o(.constdata)
-    modbus_auchCRCLo                         0x08002476   Data         256  modbus_slave.o(.constdata)
-    Region$$Table$$Base                      0x08002578   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x08002598   Number         0  anon$$obj.o(Region$$Table)
+    main                                     0x08002191   Thumb Code    20  opencmx_main.o(i.main)
+    modbus_calc_crc                          0x080021a5   Thumb Code    24  modbus_slave.o(i.modbus_calc_crc)
+    modbus_check_timeout                     0x080021c9   Thumb Code    20  modbus_slave.o(i.modbus_check_timeout)
+    modbus_enable_timeout                    0x080021e1   Thumb Code    10  modbus_slave.o(i.modbus_enable_timeout)
+    modbus_exception_rsp                     0x080021f1   Thumb Code    40  modbus_slave.o(i.modbus_exception_rsp)
+    modbus_kbhit                             0x08002231   Thumb Code    38  modbus_slave.o(i.modbus_kbhit)
+    modbus_read_discrete_input_rsp           0x08002261   Thumb Code    46  modbus_slave.o(i.modbus_read_discrete_input_rsp)
+    modbus_read_holding_registers_rsp        0x0800228f   Thumb Code    54  modbus_slave.o(i.modbus_read_holding_registers_rsp)
+    modbus_read_input_registers_rsp          0x080022c5   Thumb Code    54  modbus_slave.o(i.modbus_read_input_registers_rsp)
+    modbus_serial_putc                       0x080022fd   Thumb Code    42  modbus_slave.o(i.modbus_serial_putc)
+    modbus_serial_send_start                 0x0800232d   Thumb Code    44  modbus_slave.o(i.modbus_serial_send_start)
+    modbus_serial_send_stop                  0x0800235d   Thumb Code    32  modbus_slave.o(i.modbus_serial_send_stop)
+    modbus_slave_exe                         0x08002381   Thumb Code   562  modbus_slave.o(i.modbus_slave_exe)
+    modbus_timeout_now                       0x080025f5   Thumb Code    58  modbus_slave.o(i.modbus_timeout_now)
+    modbus_write_multiple_coils_rsp          0x08002639   Thumb Code    44  modbus_slave.o(i.modbus_write_multiple_coils_rsp)
+    modbus_write_multiple_registers_rsp      0x08002665   Thumb Code    44  modbus_slave.o(i.modbus_write_multiple_registers_rsp)
+    modbus_write_single_coil_rsp             0x08002691   Thumb Code    44  modbus_slave.o(i.modbus_write_single_coil_rsp)
+    modbus_write_single_register_rsp         0x080026bd   Thumb Code    44  modbus_slave.o(i.modbus_write_single_register_rsp)
+    swap_bits                                0x080026e9   Thumb Code    60  modbus_slave.o(i.swap_bits)
+    tasks                                    0x08002725   Thumb Code   168  opencmx_fuc.o(i.tasks)
+    updateEstimate                           0x08002829   Thumb Code   148  simplekalmanfilter.o(i.updateEstimate)
+    RX_BUFFER_SIZE0                          0x080028c4   Data           1  stm32f10x_it.o(.constdata)
+    RX2_BUFFER_SIZE                          0x080028c5   Data           1  stm32f10x_it.o(.constdata)
+    modbus_auchCRCHi                         0x080028c6   Data         256  modbus_slave.o(.constdata)
+    modbus_auchCRCLo                         0x080029c6   Data         256  modbus_slave.o(.constdata)
+    Region$$Table$$Base                      0x08002ac8   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x08002ae8   Number         0  anon$$obj.o(Region$$Table)
     USART1_index                             0x20000000   Data           1  stm32f10x_it.o(.data)
     USART2_index                             0x20000001   Data           1  stm32f10x_it.o(.data)
     ledbit                                   0x20000002   Data           1  stm32f10x_it.o(.data)
@@ -1814,9 +1831,9 @@ Memory Map of the image
 
   Image Entry point : 0x08000131
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00002644, Max: 0x00060000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00002b94, Max: 0x00060000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Base: 0x08000000, Size: 0x00002598, Max: 0x00060000, ABSOLUTE)
+    Execution Region ER_IROM1 (Base: 0x08000000, Size: 0x00002ae8, Max: 0x00060000, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -1934,16 +1951,33 @@ Memory Map of the image
     0x08002038   0x00000024   Code   RO          218    i.fputc             opencmx_main.o
     0x0800205c   0x000000c4   Code   RO            8    i.hardware_init     opencmx_fuc.o
     0x08002120   0x00000070   Code   RO          790    i.incomming_modbus_serial  modbus_slave.o
-    0x08002190   0x00000010   Code   RO          219    i.main              opencmx_main.o
-    0x080021a0   0x00000024   Code   RO          791    i.modbus_calc_crc   modbus_slave.o
-    0x080021c4   0x00000010   Code   RO          793    i.modbus_enable_timeout  modbus_slave.o
-    0x080021d4   0x00000104   Code   RO           10    i.tasks             opencmx_fuc.o
-    0x080022d8   0x0000009c   Code   RO          663    i.updateEstimate    simplekalmanfilter.o
-    0x08002374   0x00000001   Data   RO          458    .constdata          stm32f10x_it.o
-    0x08002375   0x00000001   Data   RO          459    .constdata          stm32f10x_it.o
-    0x08002376   0x00000200   Data   RO          817    .constdata          modbus_slave.o
-    0x08002576   0x00000002   PAD
-    0x08002578   0x00000020   Data   RO         4605    Region$$Table       anon$$obj.o
+    0x08002190   0x00000014   Code   RO          219    i.main              opencmx_main.o
+    0x080021a4   0x00000024   Code   RO          791    i.modbus_calc_crc   modbus_slave.o
+    0x080021c8   0x00000018   Code   RO          792    i.modbus_check_timeout  modbus_slave.o
+    0x080021e0   0x00000010   Code   RO          793    i.modbus_enable_timeout  modbus_slave.o
+    0x080021f0   0x00000040   Code   RO          794    i.modbus_exception_rsp  modbus_slave.o
+    0x08002230   0x00000030   Code   RO          796    i.modbus_kbhit      modbus_slave.o
+    0x08002260   0x0000002e   Code   RO          797    i.modbus_read_discrete_input_rsp  modbus_slave.o
+    0x0800228e   0x00000036   Code   RO          799    i.modbus_read_holding_registers_rsp  modbus_slave.o
+    0x080022c4   0x00000036   Code   RO          800    i.modbus_read_input_registers_rsp  modbus_slave.o
+    0x080022fa   0x00000002   PAD
+    0x080022fc   0x00000030   Code   RO          801    i.modbus_serial_putc  modbus_slave.o
+    0x0800232c   0x00000030   Code   RO          802    i.modbus_serial_send_start  modbus_slave.o
+    0x0800235c   0x00000024   Code   RO          803    i.modbus_serial_send_stop  modbus_slave.o
+    0x08002380   0x00000274   Code   RO          804    i.modbus_slave_exe  modbus_slave.o
+    0x080025f4   0x00000044   Code   RO          805    i.modbus_timeout_now  modbus_slave.o
+    0x08002638   0x0000002c   Code   RO          806    i.modbus_write_multiple_coils_rsp  modbus_slave.o
+    0x08002664   0x0000002c   Code   RO          807    i.modbus_write_multiple_registers_rsp  modbus_slave.o
+    0x08002690   0x0000002c   Code   RO          808    i.modbus_write_single_coil_rsp  modbus_slave.o
+    0x080026bc   0x0000002c   Code   RO          809    i.modbus_write_single_register_rsp  modbus_slave.o
+    0x080026e8   0x0000003c   Code   RO          811    i.swap_bits         modbus_slave.o
+    0x08002724   0x00000104   Code   RO           10    i.tasks             opencmx_fuc.o
+    0x08002828   0x0000009c   Code   RO          663    i.updateEstimate    simplekalmanfilter.o
+    0x080028c4   0x00000001   Data   RO          458    .constdata          stm32f10x_it.o
+    0x080028c5   0x00000001   Data   RO          459    .constdata          stm32f10x_it.o
+    0x080028c6   0x00000200   Data   RO          817    .constdata          modbus_slave.o
+    0x08002ac6   0x00000002   PAD
+    0x08002ac8   0x00000020   Data   RO         4605    Region$$Table       anon$$obj.o
 
 
     Execution Region RW_IRAM1 (Base: 0x20000000, Size: 0x00000550, Max: 0x00010000, ABSOLUTE)
@@ -1975,31 +2009,31 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-       224         18          0         16          0       1459   adcdma.o
-        46          0          0          0          0       1266   delay.o
+       224         18          0         16          0       1419   adcdma.o
+        46          0          0          0          0       1226   delay.o
        462         66          0          0          0       2994   gpio_stm32f10x.o
-       410         22          0          0          0       6140   lcd16x2.o
+       410         22          0          0          0       6012   lcd16x2.o
        120         16          0          0          0       1659   misc.o
-       164         28        512         49        100       5147   modbus_slave.o
-       572        154          0          0         20     279791   opencmx_fuc.o
-        52          6          0          0          0       5111   opencmx_main.o
-       168         12          0         32          0       1687   simplekalmanfilter.o
-        36          8        304          0       1024        832   startup_stm32f10x_hd.o
+      1518        156        512         49        100      15115   modbus_slave.o
+       572        154          0          0         20     279727   opencmx_fuc.o
+        56          6          0          0          0       5091   opencmx_main.o
+       168         12          0         32          0       1647   simplekalmanfilter.o
+        36          8        304          0       1024        820   startup_stm32f10x_hd.o
        296         10          0          0          0       7861   stm32f10x_adc.o
        308         10          0          0          0       3778   stm32f10x_dma.o
        162          0          0          0          0       1988   stm32f10x_gpio.o
-       316         50          2         28         40       7001   stm32f10x_it.o
+       316         50          2         28         40       6821   stm32f10x_it.o
        280         42          0         20          0       6514   stm32f10x_rcc.o
         64         16          0          0          0       1696   stm32f10x_rtc.o
        324          6          0          0          0       5985   stm32f10x_usart.o
         16          6          0          0          0        538   stm32f10x_wwdg.o
-       348         40          0         20          0       2637   system_stm32f10x.o
-       156         10          0          0          0        738   uart.o
+       348         40          0         20          0       2577   system_stm32f10x.o
+       156         10          0          0          0        726   uart.o
 
     ----------------------------------------------------------------------
-      4536        520        852        168       1188     344822   Object Totals
+      5896        648        852        168       1188     354194   Object Totals
          0          0         32          0          0          0   (incl. Generated)
-        12          0          2          3          4          0   (incl. Padding)
+        14          0          2          3          4          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -2058,15 +2092,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      8772        626        852        172       1188     342482   Grand Totals
-      8772        626        852        172       1188     342482   ELF Image Totals
-      8772        626        852        172          0          0   ROM Totals
+     10132        754        852        172       1188     351022   Grand Totals
+     10132        754        852        172       1188     351022   ELF Image Totals
+     10132        754        852        172          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 9624 (   9.40kB)
+    Total RO  Size (Code + RO Data)                10984 (  10.73kB)
     Total RW  Size (RW Data + ZI Data)              1360 (   1.33kB)
-    Total ROM Size (Code + RO Data + RW Data)       9796 (   9.57kB)
+    Total ROM Size (Code + RO Data + RW Data)      11156 (  10.89kB)
 
 ==============================================================================
 

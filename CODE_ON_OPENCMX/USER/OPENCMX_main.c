@@ -38,7 +38,7 @@ int main(void)
 		/* Update WWDG counter */
 		WWDG_SetCounter(127);
     tasks();		
-		//modbus_slave_exe();
+		modbus_slave_exe();
 	}
 
 		
