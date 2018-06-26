@@ -17,11 +17,7 @@
 #define bit_clear(d,b) (d&=!(1<<b)) 
 #define bit_test(a,b) (a & (1<<b))!=0 
 #define make16(msb, lsb)  ((msb << 8) | lsb)
-uint8_t swap_bits(uint8_t c)
-{
-   return ((c&1)?128:0)|((c&2)?64:0)|((c&4)?32:0)|((c&8)?16:0)|((c&16)?8:0)
-          |((c&32)?4:0)|((c&64)?2:0)|((c&128)?1:0);
-}
+uint8_t swap_bits(uint8_t c);
 #define _false 0
 #define _true  1
 #define FALSE 0
@@ -34,13 +30,21 @@ uint8_t swap_bits(uint8_t c)
 #define MODBUS_SERIAL_BAUD 115200
 
 
-
+#define MODBUS_GETDATA_TIMEOUT 40
 #define MODBUS_ADDRESS 0x11
-#endif /* __CRC16_H */
-
-#include "modbus.h"
+//#include "modbus.h"
+ #ifndef MODBUS_SERIAL_TIMEOUT
+  #if (MODBUS_SERIAL_TYPE == MODBUS_ASCII)
+   #define MODBUS_SERIAL_TIMEOUT    1000000
+  #else
+   #define MODBUS_SERIAL_TIMEOUT      10000     //in us
+  #endif
+ #endif
 //phy layer rtu
 void modbus_check_timeout(void);
 uint32_t get_ticks(void);
 void modbus_enable_timeout(int1 enable);
 void modbus_timeout_now(void);
+
+#endif /* __MODBUSDEF_H */
+

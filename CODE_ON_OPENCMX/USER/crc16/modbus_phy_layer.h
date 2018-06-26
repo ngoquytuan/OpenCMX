@@ -24,7 +24,7 @@
 #ifndef MODBUS_PHY_LAYER_H
 #define MODBUS_PHY_LAYER_H
 
-
+extern uint8_t modbus_serial_new;
 /********************************************************************
 These exceptions are defined in the MODBUS protocol.  These can be
 used by the slave to communicate problems with the transmission back
@@ -59,15 +59,15 @@ slave.  Once a message is sent to you with your address, you should
 begin processing that message.  Refer to ex_modbus_slave.c to see
 how to properly use this structure.
 ********************************************************************/
-struct
+struct MODBUSRX
 {
    uint8_t address;
    uint8_t len;                       //number of bytes in the message received
    function func;                           //the function of the message received
    exception error;                         //error recieved, if any
    uint8_t data[MODBUS_SERIAL_RX_BUFFER_SIZE]; //data of the message received
-} modbus_rx;
-
+} ;
+extern struct MODBUSRX modbus_rx;
 //////////////////////////////////////////////////////////////////////////////////////////
 ////  For Custom Commands                                                             ////
 ////                                                                                  ////
@@ -102,14 +102,5 @@ void modbus_serial_send_stop(void);
 // Inputs:     Character
 // Outputs:    None
 void modbus_serial_putc(char c);
-
-//////////////////////////////////////////////////////////////////////////////////////////
-////  For Init                                                                        ////
-//////////////////////////////////////////////////////////////////////////////////////////
-
-// Purpose:    Enable data reception
-// Inputs:     None
-// Outputs:    None
-void RCV_ON(void);
 
 #endif //MODBUS_PHY_LAYER_H
