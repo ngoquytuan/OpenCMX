@@ -482,6 +482,11 @@
               <FileType>1</FileType>
               <FilePath>..\USER\crc16\modbus_slave.c</FilePath>
             </File>
+            <File>
+              <FileName>modbus_appphy.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\USER\crc16\modbus_appphy.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
